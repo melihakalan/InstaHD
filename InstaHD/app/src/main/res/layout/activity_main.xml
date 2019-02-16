@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.618"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:animateLayoutChanges="true">
+
+            <ImageView
+                android:id="@+id/iv_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/v_loading"
+                style="@style/AVLoadingIndicatorView.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:indicatorColor="#FA5882"
+                app:indicatorName="BallZigZagDeflectIndicator" />
+
+            <RelativeLayout
+                android:id="@+id/rl_icons"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/ib_gallery"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/ic_gallery_selector"
+                    android:elevation="3dp"
+                    android:onClick="gallery" />
+
+                <ImageButton
+                    android:id="@+id/ib_save"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_toLeftOf="@id/ib_gallery"
+                    android:background="@drawable/ic_dl_insta_selector"
+                    android:elevation="3dp"
+                    android:onClick="savePhoto" />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.382"
+        android:background="@drawable/panelback"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edit_username"
+            android:layout_width="256sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/editback"
+            android:elevation="3dp"
+            android:fontFamily="sans-serif-condensed"
+            android:hint="\@username"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:padding="15sp"
+            android:textColor="#333333"
+            android:textColorHint="#888888"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="sans-serif-condensed" />
+
+        <Button
+            android:layout_width="256sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/buttonback"
+            android:fontFamily="sans-serif-condensed"
+            android:onClick="startRetrieveProcess"
+            android:padding="15sp"
+            android:text="GET"
+            android:textColor="#FAFAFA"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="sans-serif-condensed" />
+
+    </LinearLayout>
+
+</LinearLayout>
